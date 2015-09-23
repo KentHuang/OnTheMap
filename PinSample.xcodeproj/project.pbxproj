@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01BE1BE51BB1040700EB9238 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BE1BE41BB1040700EB9238 /* FBSDKCoreKit.framework */; };
+		01BE1BE71BB1061000EB9238 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BE1BE61BB1061000EB9238 /* FBSDKLoginKit.framework */; };
+		01BE1BE91BB1063C00EB9238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */; };
+		01F5CC2A1BB12598002EFAFE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5CC291BB12598002EFAFE /* TableViewController.swift */; };
+		01F5CC2C1BB12B9A002EFAFE /* InputLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */; };
 		4DFABCE81AC0CBAC00D21C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFABCE71AC0CBAC00D21C43 /* AppDelegate.swift */; };
-		4DFABCEA1AC0CBAC00D21C43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFABCE91AC0CBAC00D21C43 /* ViewController.swift */; };
+		4DFABCEA1AC0CBAC00D21C43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFABCE91AC0CBAC00D21C43 /* MapViewController.swift */; };
 		4DFABCED1AC0CBAC00D21C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFABCEB1AC0CBAC00D21C43 /* Main.storyboard */; };
 		4DFABCEF1AC0CBAC00D21C43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DFABCEE1AC0CBAC00D21C43 /* Images.xcassets */; };
 		4DFABCF21AC0CBAC00D21C43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFABCF01AC0CBAC00D21C43 /* LaunchScreen.xib */; };
@@ -26,10 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01BE1BE41BB1040700EB9238 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		01BE1BE61BB1061000EB9238 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		01F5CC291BB12598002EFAFE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLocationViewController.swift; sourceTree = "<group>"; };
 		4DFABCE21AC0CBAC00D21C43 /* PinSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFABCE61AC0CBAC00D21C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DFABCE71AC0CBAC00D21C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DFABCE91AC0CBAC00D21C43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DFABCE91AC0CBAC00D21C43 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4DFABCEC1AC0CBAC00D21C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DFABCEE1AC0CBAC00D21C43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4DFABCF11AC0CBAC00D21C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -43,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BE1BE71BB1061000EB9238 /* FBSDKLoginKit.framework in Frameworks */,
+				01BE1BE51BB1040700EB9238 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01BE1BE11BB1032C00EB9238 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01BE1BE61BB1061000EB9238 /* FBSDKLoginKit.framework */,
+				01BE1BE41BB1040700EB9238 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4DFABCD91AC0CBAC00D21C43 = {
 			isa = PBXGroup;
 			children = (
 				4DFABCE41AC0CBAC00D21C43 /* PinSample */,
 				4DFABCFA1AC0CBAC00D21C43 /* PinSampleTests */,
 				4DFABCE31AC0CBAC00D21C43 /* Products */,
+				01BE1BE11BB1032C00EB9238 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				4DFABCE71AC0CBAC00D21C43 /* AppDelegate.swift */,
-				4DFABCE91AC0CBAC00D21C43 /* ViewController.swift */,
+				4DFABCE91AC0CBAC00D21C43 /* MapViewController.swift */,
+				01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */,
+				01F5CC291BB12598002EFAFE /* TableViewController.swift */,
 				4DFABCEB1AC0CBAC00D21C43 /* Main.storyboard */,
+				01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */,
 				4DFABCEE1AC0CBAC00D21C43 /* Images.xcassets */,
 				4DFABCF01AC0CBAC00D21C43 /* LaunchScreen.xib */,
 				4DFABCE51AC0CBAC00D21C43 /* Supporting Files */,
@@ -212,8 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DFABCEA1AC0CBAC00D21C43 /* ViewController.swift in Sources */,
+				01F5CC2C1BB12B9A002EFAFE /* InputLocationViewController.swift in Sources */,
+				01BE1BE91BB1063C00EB9238 /* LoginViewController.swift in Sources */,
+				4DFABCEA1AC0CBAC00D21C43 /* MapViewController.swift in Sources */,
 				4DFABCE81AC0CBAC00D21C43 /* AppDelegate.swift in Sources */,
+				01F5CC2A1BB12598002EFAFE /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +364,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/kenthuang/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = PinSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +379,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/kenthuang/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = PinSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +443,7 @@
 				4DFABD031AC0CBAC00D21C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DFABD041AC0CBAC00D21C43 /* Build configuration list for PBXNativeTarget "PinSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +452,7 @@
 				4DFABD061AC0CBAC00D21C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
