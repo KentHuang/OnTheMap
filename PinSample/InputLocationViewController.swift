@@ -21,8 +21,12 @@ class InputLocationViewController: UIViewController {
     
     @IBAction func submitButtonPressed(sender: UIButton) {
         if let text = self.linkTextField.text {
-            ClientModel.sharedInstance().postStudentLocation(text, completionHandler: completionHandler)
-            dismissViewControllerAnimated(true, completion: nil)
+            if ClientModel.sharedInstance().objectID == nil {
+                ClientModel.sharedInstance().postStudentLocation(text, completionHandler: completionHandler)
+            } else {
+                ClientModel.sharedInstance().putStudentLocation(text, completionHandler: completionHandler)
+            }
         }
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

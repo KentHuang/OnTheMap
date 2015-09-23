@@ -17,8 +17,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        ClientModel.sharedInstance().getStudentLocations({ self.tableView.reloadData() })
         self.tableView.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        ClientModel.sharedInstance().getStudentLocations({ self.tableView.reloadData() })
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

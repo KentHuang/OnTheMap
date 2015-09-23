@@ -48,18 +48,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func pinButtonPressed(sender: UIBarButtonItem) {
         
         for location in ClientModel.sharedInstance().locations {
-            let key = location["uniqueKey"] as! Int
+            let key = location["uniqueKey"] as! String
             if (key == ClientModel.sharedInstance().uniqueID) {
                 let message = "You have already posted a Student Location. Do you want to overwrite it?"
                 let alertController = UIAlertController(title: "", message: message, preferredStyle: .Alert)
-                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                }
-                alertController.addAction(cancelAction)
                 let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
                     self.presentInputViewController()
                 }
                 alertController.addAction(yesAction)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                alertController.addAction(cancelAction)
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
