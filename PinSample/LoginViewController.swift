@@ -16,8 +16,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         self.loginButton.delegate = self
         self.loginButton.center = self.view.center

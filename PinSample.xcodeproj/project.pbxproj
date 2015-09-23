@@ -12,6 +12,7 @@
 		01BE1BE91BB1063C00EB9238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */; };
 		01F5CC2A1BB12598002EFAFE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5CC291BB12598002EFAFE /* TableViewController.swift */; };
 		01F5CC2C1BB12B9A002EFAFE /* InputLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */; };
+		01F5CC2F1BB269CF002EFAFE /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F5CC2E1BB269CF002EFAFE /* ClientModel.swift */; };
 		4DFABCE81AC0CBAC00D21C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFABCE71AC0CBAC00D21C43 /* AppDelegate.swift */; };
 		4DFABCEA1AC0CBAC00D21C43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFABCE91AC0CBAC00D21C43 /* MapViewController.swift */; };
 		4DFABCED1AC0CBAC00D21C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFABCEB1AC0CBAC00D21C43 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		01F5CC291BB12598002EFAFE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLocationViewController.swift; sourceTree = "<group>"; };
+		01F5CC2E1BB269CF002EFAFE /* ClientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 		4DFABCE21AC0CBAC00D21C43 /* PinSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFABCE61AC0CBAC00D21C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DFABCE71AC0CBAC00D21C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		01F5CC2D1BB26972002EFAFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */,
+				01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */,
+				4DFABCE91AC0CBAC00D21C43 /* MapViewController.swift */,
+				01F5CC291BB12598002EFAFE /* TableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4DFABCD91AC0CBAC00D21C43 = {
 			isa = PBXGroup;
 			children = (
@@ -100,11 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				4DFABCE71AC0CBAC00D21C43 /* AppDelegate.swift */,
-				4DFABCE91AC0CBAC00D21C43 /* MapViewController.swift */,
-				01F5CC2B1BB12B9A002EFAFE /* InputLocationViewController.swift */,
-				01F5CC291BB12598002EFAFE /* TableViewController.swift */,
+				01F5CC2E1BB269CF002EFAFE /* ClientModel.swift */,
 				4DFABCEB1AC0CBAC00D21C43 /* Main.storyboard */,
-				01BE1BE81BB1063C00EB9238 /* LoginViewController.swift */,
+				01F5CC2D1BB26972002EFAFE /* Controllers */,
 				4DFABCEE1AC0CBAC00D21C43 /* Images.xcassets */,
 				4DFABCF01AC0CBAC00D21C43 /* LaunchScreen.xib */,
 				4DFABCE51AC0CBAC00D21C43 /* Supporting Files */,
@@ -241,6 +252,7 @@
 				01BE1BE91BB1063C00EB9238 /* LoginViewController.swift in Sources */,
 				4DFABCEA1AC0CBAC00D21C43 /* MapViewController.swift in Sources */,
 				4DFABCE81AC0CBAC00D21C43 /* AppDelegate.swift in Sources */,
+				01F5CC2F1BB269CF002EFAFE /* ClientModel.swift in Sources */,
 				01F5CC2A1BB12598002EFAFE /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
