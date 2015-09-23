@@ -47,46 +47,33 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func pinButtonPressed(sender: UIBarButtonItem) {
         
-//        for location in self.locations {
-//            if (location["uniqueKey"] as! String) == (info["userID"] as! String) {
-//                let message = "You have already posted a Student Location. Do you want to overwrite it?"
-//                let alertController = UIAlertController(title: "", message: message, preferredStyle: .Alert)
-//                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                }
-//                alertController.addAction(cancelAction)
-//                let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
-//                    self.presentInputLocationViewController()
-//                }
-//                alertController.addAction(yesAction)
-//                self.presentViewController(alertController, animated: true, completion: nil)
-//            } else {
-//                self.presentInputLocationViewController()
-//            }
-//        }
+        for location in ClientModel.sharedInstance().locations {
+            let key = location["uniqueKey"] as! Int
+            if (key == ClientModel.sharedInstance().uniqueID) {
+                let message = "You have already posted a Student Location. Do you want to overwrite it?"
+                let alertController = UIAlertController(title: "", message: message, preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                alertController.addAction(cancelAction)
+                let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
+                    self.presentInputViewController()
+                }
+                alertController.addAction(yesAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
         
-        let newPost = [
-            "createdAt" : "2015-03-11T02:48:18.321Z",
-            "firstName" : "Jarrod",
-            "lastName" : "Parkes",
-            "latitude" : 34.73037,
-            "longitude" : -86.58611000000001,
-            "mapString" : "Huntsville, Alabama",
-            "mediaURL" : "https://linkedin.com/in/jarrodparkes",
-            "objectId" : "CDHfAy8sdp",
-            "uniqueKey" : 996618664,
-            "updatedAt" : "2015-03-13T03:37:58.389Z"
-        ]
-        ClientModel.sharedInstance().locations.append(newPost)
-        self.drawPins()
+        self.presentInputViewController()
     }
-    
-    func presentInputLocationViewController() {
+
+    func presentInputViewController() {
         let controller = self.storyboard!.instantiateViewControllerWithIdentifier("InputLocationViewController") as! InputLocationViewController
+        controller.completionHandler = { self.drawPins() }
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
-    func drawPins() {
+    func drawPins() -> Void {
         self.mapView.removeAnnotations(annotations)
         self.annotations = [MKPointAnnotation]()
         

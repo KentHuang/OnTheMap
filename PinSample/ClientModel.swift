@@ -11,9 +11,9 @@ import Foundation
 class ClientModel {
     
     var locations = [[String: AnyObject]]()
- 
-    var info: [String: AnyObject]!
-    var uniqueKey = 996618664
+    var firstName = "Benedict"
+    var lastName = "Blacksmith"
+    var uniqueID = 99901237786 // hardcoded
     
     func getStudentLocations(completionHandler: () -> Void) {
 //        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation")!)
@@ -30,26 +30,44 @@ class ClientModel {
 //            completionHandler()
 //        }
 //        task.resume()
+        
         self.locations = self.hardCodedLocationData()
         completionHandler()
     }
     
-    func postStudentLocation(text: String) {
-        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation")!)
-        request.HTTPMethod = "POST"
-        request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
-        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"Ben\", \"lastName\": \"Chen\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"\(text)\",\"latitude\": 40.6975, \"longitude\": -73.9992}".dataUsingEncoding(NSUTF8StringEncoding)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if error != nil {
-                println("posting error: \(error)")
-                return
-            }
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
-        }
-        task.resume()
+    func postStudentLocation(text: String, completionHandler: () -> Void) {
+//        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.parse.com/1/classes/StudentLocation")!)
+//        request.HTTPMethod = "POST"
+//        request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
+//        request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.HTTPBody = "{\"uniqueKey\": \"\(self.uniqueID)\", \"firstName\": \"\(self.firstName)\", \"lastName\": \"\(self.lastName)\",\"mapString\": \"Statue of Liberty, NY\", \"mediaURL\": \"\(text)\",\"latitude\": 40.6892, \"longitude\": -74.0444}".dataUsingEncoding(NSUTF8StringEncoding)
+//        let session = NSURLSession.sharedSession()
+//        let task = session.dataTaskWithRequest(request) { data, response, error in
+//            if error != nil {
+//                println("posting error: \(error)")
+//                return
+//            }
+//            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+//            completionHandler()
+//        }
+//        task.resume()
+        
+        let newPost = [
+            "createdAt" : "2015-03-11T02:48:18.321Z",
+            "firstName" : firstName,
+            "lastName" : lastName,
+            "latitude" : 34.73037,
+            "longitude" : -86.58611000000001,
+            "mapString" : "Huntsville, Alabama",
+            "mediaURL" : text,
+            "objectId" : "CDHfAy8sdp",
+            "uniqueKey" : uniqueID,
+            "updatedAt" : "2015-03-13T03:37:58.389Z"
+        ]
+        self.locations.append(newPost as! [String : AnyObject])
+        println("locations: \(self.locations)")
+        completionHandler()
     }
     
     

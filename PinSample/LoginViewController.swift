@@ -27,6 +27,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if error != nil {
             println("There was an error: \(error)")
         } else {
+            
+            if (FBSDKAccessToken.currentAccessToken() != nil) {
+                FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler { connection, result, error in
+                    if error == nil {
+                        println(result)
+                    }
+                }
+            }
+            
             let controller = self.storyboard!.instantiateViewControllerWithIdentifier("MainViewController") as! UITabBarController
             self.presentViewController(controller, animated: true, completion: nil)
         }
